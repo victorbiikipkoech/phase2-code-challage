@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React,{} from 'react';
 
 const TransactionTable = ({ transactions, onDeleteTransaction }) => {
-  // ... (previous code)
 
   const handleDelete = (id) => {
     onDeleteTransaction(id);
@@ -35,6 +34,8 @@ const TransactionTable = ({ transactions, onDeleteTransaction }) => {
 };
 
 export default TransactionTable;
+
+
 
 
 

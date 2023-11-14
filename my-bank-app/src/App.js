@@ -9,7 +9,6 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Fetch transactions from the provided db.json file
     fetch('/db.json')
       .then((response) => response.json())
       .then((data) => setTransactions(data.transactions))
