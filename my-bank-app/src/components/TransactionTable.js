@@ -10,7 +10,6 @@ const TransactionTable = ({ transactions, onDeleteTransaction }) => {
     <table>
       <thead>
         <tr>
-          {/* ... (previous code) */}
           <th>Action</th>
         </tr>
       </thead>

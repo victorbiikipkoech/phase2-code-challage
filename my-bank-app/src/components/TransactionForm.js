@@ -22,7 +22,6 @@ const TransactionForm = ({ onAddTransaction }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* Your form fields go here */}
       <button type="submit">Add Transaction</button>
     </form>
   );
