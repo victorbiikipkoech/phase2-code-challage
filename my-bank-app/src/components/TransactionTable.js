@@ -1,4 +1,3 @@
-// src/components/TransactionTable.js
 import React, { useState } from 'react';
 
 const TransactionTable = ({ transactions, onDeleteTransaction }) => {
@@ -36,6 +35,8 @@ const TransactionTable = ({ transactions, onDeleteTransaction }) => {
 };
 
 export default TransactionTable;
+
+
 
 
 

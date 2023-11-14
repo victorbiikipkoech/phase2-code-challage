@@ -1,4 +1,3 @@
-// src/components/TransactionForm.js
 import React, { useState } from 'react';
 
 const TransactionForm = ({ onAddTransaction }) => {
@@ -33,3 +32,4 @@ const TransactionForm = ({ onAddTransaction }) => {
 };
 
 export default TransactionForm;
+
