@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
-import './styles.css';
 
 const App = () => {
   const [transactions, setTransactions] = useState([]);
@@ -9,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     
-    fetch('')
+    fetch('https://my-json-server.typicode.com/victorbiikipkoech/Bank/db')
       .then(response => response.json())
       .then(data => setTransactions(data.transactions))
       .catch(error => console.error('Error fetching data:', error));
