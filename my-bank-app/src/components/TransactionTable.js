@@ -1,30 +1,23 @@
-import React,{} from 'react';
+import React from 'react';
 
-const TransactionTable = ({ transactions, onDeleteTransaction }) => {
-
-  const handleDelete = (id) => {
-    onDeleteTransaction(id);
-  };
-
+const TransactionTable = ({ transactions }) => {
   return (
-    <table>
+    <table style={{ margin: 'auto', textAlign: 'center' }}>
       <thead>
         <tr>
-          <th>Action</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Amount</th>
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction) => (
+        {transactions.map(transaction => (
           <tr key={transaction.id}>
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>
             <td>{transaction.category}</td>
             <td>{transaction.amount}</td>
-            <td>
-              <button onClick={() => handleDelete(transaction.id)}>
-                Delete
-              </button>
-            </td>
           </tr>
         ))}
       </tbody>

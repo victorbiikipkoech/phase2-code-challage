@@ -1,40 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
-import SearchBar from './components/SearchBar';
+import './styles.css';
 
 const App = () => {
   const [transactions, setTransactions] = useState([]);
-  const [filteredTransactions, setFilteredTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('/db.json')
-      .then((response) => response.json())
-      .then((data) => setTransactions(data.transactions))
-      .catch((error) => console.error('Error fetching data:', error));
+    
+    fetch('')
+      .then(response => response.json())
+      .then(data => setTransactions(data.transactions))
+      .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  useEffect(() => {
-    // Filter transactions based on the search term
-    setFilteredTransactions(
-      transactions.filter((transaction) =>
-        transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
-  }, [transactions, searchTerm]);
-
-  const handleAddTransaction = (newTransaction) => {
-    // Add the new transaction to the local state (not persisted to the backend)
+  const handleAddTransaction = newTransaction => {
+    
     setTransactions([...transactions, newTransaction]);
   };
 
+  const handleSearch = term => {
+    setSearchTerm(term);
+  };
+
+  
+  const filteredTransactions = transactions.filter(transaction =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
-      <h1>My Bank App</h1>
-      <SearchBar onSearch={setSearchTerm} />
-      <TransactionTable transactions={filteredTransactions} />
+      <h1 style={{ textAlign: 'center' }}>Bank Transactions</h1>
       <TransactionForm onAddTransaction={handleAddTransaction} />
+      <input
+        type="text"
+        placeholder="Search transactions..."
+        onChange={e => handleSearch(e.target.value)}
+      />
+      <TransactionTable transactions={filteredTransactions} />
     </div>
   );
 };
