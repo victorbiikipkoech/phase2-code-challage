@@ -43,4 +43,10 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #6fbf73; /* Green background color */
+  margin: 0;
+  padding: 0;
+}
 
